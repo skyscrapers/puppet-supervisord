@@ -34,6 +34,7 @@
 #
 class supervisord (
   $includefiles = $supervisord::params::includefiles,
+  $environment  = undef,
 ) inherits supervisord::params {
 
   class { 'supervisord::install': } ->
