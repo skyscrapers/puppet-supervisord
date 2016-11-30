@@ -26,8 +26,8 @@ class supervisord::config {
       content => template('supervisord/etc/supervisor/supervisord.conf.erb'),
       mode    => '0644',
       owner   => root,
-      group   => root;
+      group   => root
   }
 
-  create_resources('supervisord::config::file', hiera('supervisord::config_files', {}), {})
+  create_resources('supervisord::config::file', hiera_hash('supervisord::config_files', {}), {})
 }

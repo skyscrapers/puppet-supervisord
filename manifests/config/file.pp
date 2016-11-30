@@ -1,16 +1,16 @@
 # == Define: supervisord::config::file
 #
 define supervisord::config::file (
-  $command          => undef,
-  $directory        => undef,
-  $user             => undef,
-  $process_name     => '%(program_name)s_%(process_num)s',
-  $startsecs        => 10,
-  $numprocs         => 1,
-  $autostart        => 'true',
-  $autorestart      => 'true',
-  $redirect_stderr  => 'true',
-  $startretries     => 3,
+  $command          = undef,
+  $directory        = undef,
+  $user             = undef,
+  $process_name     = '%(program_name)s_%(process_num)s',
+  $startsecs        = 10,
+  $numprocs         = 1,
+  $autostart        = 'true',
+  $autorestart      = 'true',
+  $redirect_stderr  = 'true',
+  $startretries     = 3,
 ) {
   file { "${::supervisord::params::includedir}/${title}.conf":
     ensure  => file,
