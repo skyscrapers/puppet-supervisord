@@ -18,7 +18,6 @@ define supervisord::config::file (
     content => template('supervisord/etc/supervisor/service.conf.erb'),
     owner   => root,
     group   => root,
-    require => Class['supervisord'],
     notify  => Service['supervisor'],
   }
 }
