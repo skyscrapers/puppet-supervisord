@@ -30,4 +30,4 @@ serverurl=unix:///var/run//supervisor.sock ; use a unix:// URL  for a unix socke
 ; include files themselves.
 
 [include]
-files = <%= scope.lookupvar('supervisord::includefiles') %>
+files = <%= @include %>

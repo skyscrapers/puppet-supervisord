@@ -20,6 +20,12 @@
 # This class is called from supervisord
 #
 class supervisord::config {
+
+  if $::supervisord::includefiles == $::supervisord::params::includefiles {
+    $include = $::supervisord::includefiles
+  } else { # Also include the default supervisord config dir
+    $include = "${::supervisord::includefiles} ${::supervisord::params::includefiles}"
+  }
   file {
     '/etc/supervisor/supervisord.conf':
       ensure  => file,
