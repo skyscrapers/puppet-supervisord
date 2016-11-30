@@ -28,4 +28,6 @@ class supervisord::config {
       owner   => root,
       group   => root;
   }
+
+  create_resources('supervisord::config::file', hiera('supervisord::config_files', {}), {})
 }

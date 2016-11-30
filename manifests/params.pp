@@ -21,5 +21,6 @@
 # It sets variables according to platform
 #
 class supervisord::params {
-  $includefiles = '/etc/supervisor/conf.d/*.conf'
+  $includedir = '/etc/supervisor/conf.d'
+  $includefiles = "${includedir}/*.conf"
 }
