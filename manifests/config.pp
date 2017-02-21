@@ -21,6 +21,8 @@
 #
 class supervisord::config {
 
+  $environment = $::supervisord::environment
+
   if $::supervisord::includefiles == $::supervisord::params::includefiles {
     $include = $::supervisord::includefiles
   } else { # Also include the default supervisord config dir
