@@ -33,8 +33,10 @@
 #     }
 #
 class supervisord (
-  $includefiles = $supervisord::params::includefiles,
-  $environment  = undef,
+  $includefiles     = $supervisord::params::includefiles,
+  $environment      = undef,
+  $sock_permissions = 0700,
+  $sock_ownership   = undef,
 ) inherits supervisord::params {
 
   class { 'supervisord::install': } ->
