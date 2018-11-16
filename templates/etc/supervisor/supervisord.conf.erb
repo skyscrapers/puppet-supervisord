@@ -4,7 +4,7 @@
 
 [unix_http_server]
 file=/var/run//supervisor.sock   ; (the path to the socket file)
-chmod=<%= scope.lookupvar('supervisord::sock_permissions') %> ; sockef file mode (default 0700)
+chmod=0770 ; sockef file mode (default 0700)
 <% if scope.lookupvar('supervisord::sock_ownership') -%>
 chown='<%= scope.lookupvar('supervisord::sock_ownership') %>' ; socket file username and group (default Use the username and group of the user who starts supervisord)
 <% end -%>
